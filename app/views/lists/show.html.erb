@@ -1,0 +1,12 @@
+  <h1> Movies 🎬</h1>
+      <% @list.bookmarks.each do |bookmark| %>
+      <li>Name : <%= bookmark.movie.title %></li>
+      <li>Rating :<%= bookmark.movie.rating %><li>
+      <li>Overview : <%= bookmark.movie.overview %><li>
+      <li>Comment :<%= bookmark.comment =%><li>
+    <%= link_to "Delete this bookmark", bookmark_path(bookmark), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{bookmark.movie.title} from your #{@list.name} list"}, class: 'text-danger' %>
+
+    <%end%>
+  <p><%= link_to "Bookmark", new_list_bookmark_path(list_id: @list.id) %>
+  <p><%= link_to "Delete this movie list", list_path(@list), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" } %></p>
+  <p><%= link_to "Back home", lists_path %>

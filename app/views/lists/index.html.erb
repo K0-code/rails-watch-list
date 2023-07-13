@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row cards">
+    <h1>My Movie Lists</h1>
+        <ul class="list-group mb-3">
+          <% @lists.each do |list| %>
+            <li class="list-group-item">
+              <%= link_to list.name, list_path(list) %>
+            </li>
+          <% end %>
+        </ul>
+        <p><%= link_to "Create a movie list", new_list_path(@bookmark), class: 'btn btn-primary' %></p>
+      </div>
+</div>

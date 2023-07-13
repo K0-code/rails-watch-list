@@ -1,0 +1,14 @@
+<h1>Create your watch list</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <%= simple_form_for(@list) do |f| %>
+        <%= f.input :name, placeholder: 'Add a list name' %>
+        <%= f.submit "Create", class: "btn btn-primary" %>
+
+        <%= link_to "Back home", lists_path %>
+      <% end %>
+    </div>
+  </div>
+</div>
